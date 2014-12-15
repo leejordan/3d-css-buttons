@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>3d button effects using css only</title>
+        <style>
+        body {
+            text-align: center;
+        }
+
+        button.three-d {
+            transition: all 0.1s ease-in;
+            position: relative;
+            top: -2px;
+            display: inline-block;
+            margin: 0 10px 20px 0;
+            padding: 0 10px;
+            background-color: #D8D4D5;
+            color: #333;
+            min-width: 40px;
+            height: 40px;
+            line-height: 40px;
+            vertical-align: middle;
+            font-family: 'Lato', sans-serif;
+            font-weight: normal;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+            border: 1px solid #636363;
+            text-shadow: 1px 1px #e9e9e9;
+            box-shadow: inset 0 0 0 0 #000000, 0 2px 2px #000000;
+            border-radius: 3px;
+        }
+
+        button.three-d:hover,
+        button.three-d:focus {
+            cursor: pointer;
+            outline: none;
+        }
+
+        button.three-d:active {
+            outline: none;
+            top: 0;
+            box-shadow: inset 0 2px 2px 0 #000000, 0 0 0 #000000;
+            background-color: #c1bebf;
+        }
+
+        button.large {
+            padding: 0 30px;
+            min-width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 24px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 0 #000000, 0 2px 4px #000000;
+        }
+
+        button.bill {
+            background: url(http://www.fillmurray.com/80/80) no-repeat 50% 50% scroll #D8D4D5;
+            background-size: cover;
+        }
+
+        button.baby {
+            background: url(http://www.lendmeyourear.net/bits/images/portrait-medium.jpg) no-repeat 50% 50% scroll #D8D4D5;
+            background-size: cover;
+        }
+
+        button.logo {
+            background: url(http://www.lendmeyourear.net/bits/images/fb-medium.jpg) no-repeat 50% 50% scroll #D8D4D5;
+            background-size: cover;
+        }
+
+        button.submit {
+            text-shadow: 1px 1px #777;
+            background-color: #00b5e9;
+            color: #fff;
+        }
+
+        button.submit:active {
+            background-color: #03a8d8;
+            color: #f7f7f7;
+        }
+
+        button.cancel {
+            text-shadow: 1px 1px #333;
+            background-color: #ab1818;
+            color: #fff;
+            border: 1px solid #333;
+        }
+
+        button.cancel:active {
+            background-color: #921616;
+            color: #f7f7f7;
+        }
+
+        button.primary {
+            text-shadow: 1px 1px #333;
+            background-color: #80a000;
+            color: #fff;
+            border: 1px solid #333;
+        }
+
+        button.primary:active {
+            background-color: #728f00;
+            color: #f7f7f7;
+        }
+
+        button.bubble:before {
+            content: " ";
+            display: block;
+            width: 100%;
+            height: 30%;
+            top: 0;
+            left: 0;
+            right: 0;
+            position:absolute;
+            background-color: #FFFFFF;
+            border-radius: 2px 2px 50% 50%;
+            opacity: .30;
+        }
+
+        button.bubble-left:before {
+            content: " ";
+            display: block;
+            width: 100%;
+            height: 50%;
+            top: 0;
+            left: 0;
+            right: 0;
+            position:absolute;
+            background-color: #FFFFFF;
+            border-radius: 2px 2px 0 100%;
+            opacity: .30;
+        }
+
+        button.bubble-inverse:after {
+            content: " ";
+            display: block;
+            width: 100%;
+            height: 30%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position:absolute;
+            top: 70%;
+            background-color: #000000;
+            border-radius: 50% 50% 2px 2px;
+            opacity: .10;
+        }
+
+        .keyboard-grid button {
+            margin: 0 3px 9px 0;
+        }
+
+        button.keyboard:before {
+            content: " ";
+            display: block;
+            width: 100%;
+            height: 15%;
+            top: 0;
+            left: 0;
+            right: 0;
+            position:absolute;
+            background-color: #FFFFFF;
+            border-radius: 2px 2px 0 0;
+            opacity: .30;
+        }
+
+        button.keyboard:after {
+            content: " ";
+            display: block;
+            width: 100%;
+            height: 15%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position:absolute;
+            top: 85%;
+            background-color: #000000;
+            border-radius: 0 0 2px 2px;
+            opacity: .20;
+        }
+
+        button.keyboard-rounded:before {
+            content: " ";
+            display: block;
+            width: 100%;
+            height: 15%;
+            top: 0;
+            left: 0;
+            right: 0;
+            position:absolute;
+            background-color: #FFFFFF;
+            border-radius: 2px 2px 50% 50%;
+            opacity: .30;
+        }
+
+        button.keyboard-rounded:after {
+            content: " ";
+            display: block;
+            width: 100%;
+            height: 15%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position:absolute;
+            top: 85%;
+            background-color: #000000;
+            border-radius: 50% 50% 2px 2px;
+            opacity: .20;
+        }
+        </style>
+
+        <!--[if lt IE 9]>
+        <style type="text/css">
+            a:before, a:after {
+                background:transparent !important;
+            }
+        </style>
+        <![endif]-->
+
+    </head>
+    <body>
+        <h2>bubble</h2>
+        <button class="bubble three-d"></button>
+        <button class="bubble three-d bill"></button>
+        <button class="bubble three-d baby"></button>
+        <button class="bubble three-d logo"></button>
+        <button class="bubble three-d">default</button>
+        <button class="bubble three-d submit">submit</button>
+        <button class="bubble three-d cancel">cancel</button>
+        <button class="bubble three-d primary">primary</button>
+        <br>
+        <button class="bubble three-d large"></button>
+        <button class="bubble three-d bill large"></button>
+        <button class="bubble three-d baby large"></button>
+        <button class="bubble three-d logo large"></button>
+        <button class="bubble three-d large">default</button>
+        <button class="bubble three-d submit large">submit</button>
+        <button class="bubble three-d cancel large">cancel</button>
+        <button class="bubble three-d primary large">primary</button>
+        <hr>
+
+        <h2>bubble-left</h2>
+        <button class="bubble-left three-d"></button>
+        <button class="bubble-left three-d bill"></button>
+        <button class="bubble-left three-d baby"></button>
+        <button class="bubble-left three-d logo"></button>
+        <button class="bubble-left three-d">default</button>
+        <button class="bubble-left three-d submit">submit</button>
+        <button class="bubble-left three-d cancel">cancel</button>
+        <button class="bubble-left three-d primary">primary</button>
+        <br>
+        <button class="bubble-left three-d large"></button>
+        <button class="bubble-left three-d bill large"></button>
+        <button class="bubble-left three-d baby large"></button>
+        <button class="bubble-left three-d logo large"></button>
+        <button class="bubble-left three-d large">default</button>
+        <button class="bubble-left three-d submit large">submit</button>
+        <button class="bubble-left three-d cancel large">cancel</button>
+        <button class="bubble-left three-d primary large">primary</button>
+        <hr>
+
+        <h2>bubble-inverse</h2>
+        <button class="bubble-inverse three-d"></button>
+        <button class="bubble-inverse three-d bill"></button>
+        <button class="bubble-inverse three-d baby"></button>
+        <button class="bubble-inverse three-d logo"></button>
+        <button class="bubble-inverse three-d">default</button>
+        <button class="bubble-inverse three-d submit">submit</button>
+        <button class="bubble-inverse three-d cancel">cancel</button>
+        <button class="bubble-inverse three-d primary">primary</button>
+        <br>
+        <button class="bubble-inverse three-d large"></button>
+        <button class="bubble-inverse three-d bill large"></button>
+        <button class="bubble-inverse three-d baby large"></button>
+        <button class="bubble-inverse three-d logo large"></button>
+        <button class="bubble-inverse three-d large">default</button>
+        <button class="bubble-inverse three-d submit large">submit</button>
+        <button class="bubble-inverse three-d cancel large">cancel</button>
+        <button class="bubble-inverse three-d primary large">primary</button>
+        <hr>
+
+        <h2>keyboard</h2>
+        <button class="keyboard three-d"></button>
+        <button class="keyboard three-d bill"></button>
+        <button class="keyboard three-d baby"></button>
+        <button class="keyboard three-d logo"></button>
+        <button class="keyboard three-d">default</button>
+        <button class="keyboard three-d submit">submit</button>
+        <button class="keyboard three-d cancel">cancel</button>
+        <button class="keyboard three-d primary">primary</button>
+        <br>
+        <button class="keyboard three-d large"></button>
+        <button class="keyboard three-d bill large"></button>
+        <button class="keyboard three-d baby large"></button>
+        <button class="keyboard three-d logo large"></button>
+        <button class="keyboard three-d large">default</button>
+        <button class="keyboard three-d submit large">submit</button>
+        <button class="keyboard three-d cancel large">cancel</button>
+        <button class="keyboard three-d primary large">primary</button>
+        <hr>
+
+        <h2>keyboard demo</h2>
+        <div class="keyboard-grid">
+            <button class="keyboard three-d">Q</button>
+            <button class="keyboard three-d">W</button>
+            <button class="keyboard three-d">E</button>
+            <button class="keyboard three-d">R</button>
+            <button class="keyboard three-d">T</button>
+            <button class="keyboard three-d">Y</button>
+            <button class="keyboard three-d">U</button>
+            <button class="keyboard three-d">I</button>
+            <button class="keyboard three-d">O</button>
+            <button class="keyboard three-d">P</button>
+            <br>
+            <button class="keyboard three-d">A</button>
+            <button class="keyboard three-d">S</button>
+            <button class="keyboard three-d">D</button>
+            <button class="keyboard three-d">F</button>
+            <button class="keyboard three-d">G</button>
+            <button class="keyboard three-d">H</button>
+            <button class="keyboard three-d">J</button>
+            <button class="keyboard three-d">K</button>
+            <button class="keyboard three-d">L</button>
+            <br>
+            <button class="keyboard three-d">Z</button>
+            <button class="keyboard three-d">X</button>
+            <button class="keyboard three-d">C</button>
+            <button class="keyboard three-d">V</button>
+            <button class="keyboard three-d">B</button>
+            <button class="keyboard three-d">N</button>
+            <button class="keyboard three-d">M</button>
+        </div>
+        <hr>
+
+        <h2>keyboard-rounded</h2>
+        <button class="keyboard-rounded three-d"></button>
+        <button class="keyboard-rounded three-d bill"></button>
+        <button class="keyboard-rounded three-d baby"></button>
+        <button class="keyboard-rounded three-d logo"></button>
+        <button class="keyboard-rounded three-d">default</button>
+        <button class="keyboard-rounded three-d submit">submit</button>
+        <button class="keyboard-rounded three-d cancel">cancel</button>
+        <button class="keyboard-rounded three-d primary">primary</button>
+        <br>
+        <button class="keyboard-rounded three-d large"></button>
+        <button class="keyboard-rounded three-d bill large"></button>
+        <button class="keyboard-rounded three-d baby large"></button>
+        <button class="keyboard-rounded three-d logo large"></button>
+        <button class="keyboard-rounded three-d large">default</button>
+        <button class="keyboard-rounded three-d submit large">submit</button>
+        <button class="keyboard-rounded three-d cancel large">cancel</button>
+        <button class="keyboard-rounded three-d primary large">primary</button>
+        <hr>
+
+        <h2>keyboard-rounded demo</h2>
+        <div class="keyboard-grid">
+            <button class="keyboard-rounded three-d">Q</button>
+            <button class="keyboard-rounded three-d">W</button>
+            <button class="keyboard-rounded three-d">E</button>
+            <button class="keyboard-rounded three-d">R</button>
+            <button class="keyboard-rounded three-d">T</button>
+            <button class="keyboard-rounded three-d">Y</button>
+            <button class="keyboard-rounded three-d">U</button>
+            <button class="keyboard-rounded three-d">I</button>
+            <button class="keyboard-rounded three-d">O</button>
+            <button class="keyboard-rounded three-d">P</button>
+            <br>
+            <button class="keyboard-rounded three-d">A</button>
+            <button class="keyboard-rounded three-d">S</button>
+            <button class="keyboard-rounded three-d">D</button>
+            <button class="keyboard-rounded three-d">F</button>
+            <button class="keyboard-rounded three-d">G</button>
+            <button class="keyboard-rounded three-d">H</button>
+            <button class="keyboard-rounded three-d">J</button>
+            <button class="keyboard-rounded three-d">K</button>
+            <button class="keyboard-rounded three-d">L</button>
+            <br>
+            <button class="keyboard-rounded three-d">Z</button>
+            <button class="keyboard-rounded three-d">X</button>
+            <button class="keyboard-rounded three-d">C</button>
+            <button class="keyboard-rounded three-d">V</button>
+            <button class="keyboard-rounded three-d">B</button>
+            <button class="keyboard-rounded three-d">N</button>
+            <button class="keyboard-rounded three-d">M</button>
+        </div>
+    </body>
+</html>

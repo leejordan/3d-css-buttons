@@ -1,0 +1,1 @@
+These buttons use absolutely positioned transparent elements over a flat colour button to simulate a shiny 3d effect using the :before and :after pseudo elements. They also use an active state that simulates the button being pressed into the page.
